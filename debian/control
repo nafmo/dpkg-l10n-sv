@@ -9,12 +9,12 @@ Vcs-Git: https://git.dpkg.org/git/dpkg/dpkg.git
 Standards-Version: 4.6.0
 Rules-Requires-Root: no
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 12),
  pkg-config,
 # Needed for ITS support.
  gettext (>= 0.19.7),
 # Needed for --porefs defaults, conditional addenda and mode=eof.
- po4a (>= 0.59),
+# po4a (>= 0.59),
  zlib1g-dev,
  libbz2-dev,
  liblzma-dev,
