@@ -45,16 +45,24 @@ the first character is a comment except if it starts with ‘#include’
 Lines starting with ‘#MISSING:’ are special comments documenting
 symbols that have disappeared.
 
-=head2 Using #PACKAGE# substitution
+=head2 Using metavariable substitutions
+
+In some cases instead of hardcoding some variable text,
+we can use metavariables that will be replaced either
+when generating the symbols file shipped in the binary package,
+or during dependency generation.
+
+Contrary to the I<#MINVER#> metavariable,
+the following metavariables will never appear in a symbols file inside
+a binary package.
+
+=head3 Using the #PACKAGE# metavariable
 
 In some rare cases, the name of the library varies between architectures.
-To avoid hardcoding the name of the package in the symbols file, you can
-use the marker I<#PACKAGE#>.
+To avoid hardcoding the name of the package in the symbols file,
+you can use the I<#PACKAGE#> metavariable.
 It will be replaced by the real package name during installation of the
 symbols files.
-Contrary to the
-I<#MINVER#> marker, I<#PACKAGE#> will never appear in a symbols file
-inside a binary package.
 
 =head2 Using symbol tags
 
