@@ -251,6 +251,7 @@ if ($stdout) {
     $output = g_('<standard output>');
     $symfile->output(\*STDOUT,
         package => $oppackage,
+        version => $sourceversion,
         template_mode => $template_mode,
         with_pattern_matches => $verbose_output,
         with_deprecated => $verbose_output,
@@ -266,6 +267,7 @@ if ($stdout) {
         debug(1, "Storing symbols in $output.");
         $symfile->save($output,
             package => $oppackage,
+            version => $sourceversion,
             template_mode => $template_mode,
             with_pattern_matches => $verbose_output,
             with_deprecated => $verbose_output,
@@ -328,10 +330,12 @@ unless ($quiet) {
     }
     $ref_symfile->output($before,
         package => $oppackage,
+        version => $sourceversion,
         template_mode => 1,
     );
     $symfile->output($after,
         package => $oppackage,
+        version => $sourceversion,
         template_mode => 1,
     );
 

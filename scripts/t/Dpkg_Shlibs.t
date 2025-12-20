@@ -27,7 +27,7 @@ use Dpkg::ErrorHandling;
 if (! defined $Config{bin_ELF} || $Config{bin_ELF} ne 'define') {
     plan skip_all => 'only ELF is currently supported';
 }
-plan tests => 150;
+plan tests => 152;
 
 use_ok('Dpkg::Shlibs');
 use_ok('Dpkg::Shlibs::Objdump');
@@ -515,6 +515,36 @@ is($io_data,
  symbol2_fake2@Base 1.0
  symbol3_fake2@Base 1.1
 ', "Dump of $datadir/symbols.include-2");
+
+
+$sym_file = Dpkg::Shlibs::SymbolFile->new(
+    filename => "$datadir/symbols.fake-4",
+);
+
+$sym = $sym_file->lookup_symbol('symbol1_fake2@Base', 'libfake.so.1');
+is_deeply($sym,
+    Dpkg::Shlibs::Symbol->new(
+        symbol => 'symbol1_fake2@Base',
+        minver => '1.0',
+        dep_id => 1,
+        deprecated => 0,
+    ),
+    'symbol definition with alternative dep id using #CURVER#',
+);
+
+# Check dump output.
+open $io, '>', \$io_data or die "cannot open io string\n";
+$sym_file->output($io,
+    package => 'libfake1',
+    version => '4.0-1',
+);
+is($io_data,
+'libfake.so.1 libfake1 #MINVER#
+| libfake1 (= 4.0-1)
+ symbol1_fake2@Base 1.0 1
+ symbol2_fake2@Base 1.0
+ symbol3_fake2@Base 1.1
+', "Dump of $datadir/symbols.fake-4");
 
 
 # Check parsing of objdump output on ia64 (local symbols without versions

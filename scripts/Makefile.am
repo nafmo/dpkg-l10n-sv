@@ -355,6 +355,7 @@ test_data = \
 	t/Dpkg_Shlibs/symbols.fake-1 \
 	t/Dpkg_Shlibs/symbols.fake-2 \
 	t/Dpkg_Shlibs/symbols.fake-3 \
+	t/Dpkg_Shlibs/symbols.fake-4 \
 	t/Dpkg_Shlibs/symbols.include-1 \
 	t/Dpkg_Shlibs/symbols.include-2 \
 	t/Dpkg_Shlibs/symbols.include-3 \

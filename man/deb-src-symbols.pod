@@ -64,6 +64,19 @@ you can use the I<#PACKAGE#> metavariable.
 It will be replaced by the real package name during installation of the
 symbols files.
 
+=head2 Using the #CURVER# metavariable
+
+In some cases,
+a symbol with an unstable ABI will require a strict dependency on the
+current package version.
+To avoid hardcoding the current version in the symbols file,
+you can use the I<#CURVER#> metavariable.
+It will be replaced by a dependency version constraint in the form of
+“(= I<binary-version>)”,
+where this would be generally be used in combination with I<#PACKAGE#>.
+
+Supported since dpkg 1.23.4.
+
 =head2 Using symbol tags
 
 Symbol tagging is useful for marking symbols that are special in some way.

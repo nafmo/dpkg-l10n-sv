@@ -302,6 +302,9 @@ sub replace_metavars($self, $var, %opts)
     if (exists $opts{package}) {
         $var->$* =~ s/#PACKAGE#/$opts{package}/g;
     }
+    if (exists $opts{version}) {
+        $var->$* =~ s/#CURVER#/(= $opts{version})/g;
+    }
 }
 
 sub output {
