@@ -451,6 +451,10 @@ if ($options{opmode} =~ /^(build|print-format|(before|after)-build|commit)$/) {
     if (defined $fields->{'Uploaders'}) {
         my $uploaders = field_parse_uploaders($fields);
         $fields->{'Uploaders'} = $uploaders->as_string();
+
+        if (defined $maint && $uploaders->contains($maint)) {
+            warning(g_('%f field contains the maintainer address'), 'Uploaders');
+        }
     }
 
     $fields->{'Binary'} = join(', ', @binarypackages);
