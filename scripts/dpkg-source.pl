@@ -442,6 +442,17 @@ if ($options{opmode} =~ /^(build|print-format|(before|after)-build|commit)$/) {
         }
     }
 
+    my $maint;
+    if (defined $fields->{'Maintainer'}) {
+        $maint = field_parse_maintainer($fields);
+        $fields->{'Maintainer'} = $maint->as_string();
+    }
+
+    if (defined $fields->{'Uploaders'}) {
+        my $uploaders = field_parse_uploaders($fields);
+        $fields->{'Uploaders'} = $uploaders->as_string();
+    }
+
     $fields->{'Binary'} = join(', ', @binarypackages);
     # Avoid overly long line by splitting over multiple lines.
     if (length($fields->{'Binary'}) > 980) {

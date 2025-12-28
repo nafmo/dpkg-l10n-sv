@@ -517,6 +517,11 @@ if ($fields->{'Version'} ne $substvars->get('source:Version')) {
 $fields->{'Maintainer'} = $forcemaint if defined($forcemaint);
 $fields->{'Changed-By'} = $forcechangedby if defined($forcechangedby);
 
+if (defined $fields->{'Maintainer'}) {
+    my $maint = field_parse_maintainer($fields);
+    $fields->{'Maintainer'} = $maint->as_string();
+}
+
 for my $f (qw(Version Distribution Maintainer Changes)) {
     error(g_('missing information for critical output field %s'), $f)
         unless defined $fields->{$f};

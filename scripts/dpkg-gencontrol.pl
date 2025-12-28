@@ -335,6 +335,11 @@ for my $f (qw(Priority)) {
     $fields->{$f} //= field_get_default_value($f);
 }
 
+if (defined $fields->{'Maintainer'}) {
+    my $maint = field_parse_maintainer($fields);
+    $fields->{'Maintainer'} = $maint->as_string();
+}
+
 my $pkg_type = $pkg->{'Package-Type'} ||
                $pkg->get_custom_field('Package-Type') || 'deb';
 
