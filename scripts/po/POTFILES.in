@@ -61,6 +61,8 @@ scripts/Dpkg/Deps/OR.pm
 scripts/Dpkg/Deps/Simple.pm
 scripts/Dpkg/Deps/Union.pm
 scripts/Dpkg/Dist/Files.pm
+scripts/Dpkg/Email/Address.pm
+scripts/Dpkg/Email/AddressList.pm
 scripts/Dpkg/ErrorHandling.pm
 scripts/Dpkg/Exit.pm
 scripts/Dpkg/File.pm
