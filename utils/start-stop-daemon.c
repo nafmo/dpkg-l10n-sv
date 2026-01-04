@@ -1561,10 +1561,15 @@ parse_options(int argc, char * const *argv)
 	if (background && action != ACTION_START)
 		badusage("--background is only relevant with --start");
 
+	if (notify_timeout_str && !notify_await)
+		badusage("--notify-timeout is only relevant with --notify-await");
+
 	if (!close_io && !background)
 		badusage("--no-close is only relevant with --background");
 	if (output_io && !background)
 		badusage("--output is only relevant with --background");
+	if (notify_await && !background)
+		badusage("--notify-await is only relevant with --background");
 
 	if (close_io && output_io == NULL)
 		output_io = "/dev/null";
