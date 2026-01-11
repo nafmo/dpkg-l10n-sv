@@ -508,7 +508,7 @@ static void
 pkg_infodb_update_file(const char *filename, const char *filetype)
 {
 	if (strlen(filetype) > MAXCONTROLFILENAME)
-		ohshit(_("old version of package has overly-long meatada file name (starting with '%.*s')"),
+		ohshit(_("old version of package has overly-long metadata file name (starting with '%.*s')"),
 		       MAXCONTROLFILENAME, filename);
 
 	/* We do the list separately. */
