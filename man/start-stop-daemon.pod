@@ -319,18 +319,20 @@ will force
 B<start-stop-daemon>
 to fork before starting the process, and force it into the background.
 
-B<Warning>: B<start-stop-daemon>
-cannot check the exit status if the process fails to execute for
-B<any>
-reason.
-This is a last resort, and is only meant for programs that either
-make no sense forking on their own, or where it's not feasible to add the
+B<Note>: The exit status from a late unexpected failure during the
+process initialization cannot be checked,
+unless the B<--notify-await> option is used.
+It is intended for use with programs that either make no sense daemonizing
+on their own,
+or where it is not feasible or desired to add the daemonizing and notification
 code for them to do this themselves.
 
 =item B<--notify-await>
 
 Wait for the background process to send a readiness notification before
 considering the service started (since version 1.19.3).
+This option can only be used with B<--background>.
+
 This implements parts of the systemd readiness protocol, as specified
 in the L<sd_notify(3)> manual page.
 The following variables are supported:
