@@ -322,11 +322,16 @@ Since dpkg 1.17.7.
 =item B<LDFLAGS>
 
 Options passed to the host compiler when linking executables or shared
-objects (if the linker is called directly, then
-B<-Wl>
-and
-B<,>
-have to be stripped from these options).
+objects.
+
+B<Note>: It is not safe to pass this variable directly to L<ld(1)>,
+but if the variable needs to be passed anyway,
+then these options should be sanitized to allow only options known to work.
+In general B<-Wl>, B<-l> and B<-L> options should be safe,
+with B<-Wl> getting stripped and B<,> in its arguments replaced with spaces.
+But whether any sanitized option is safe to be passed through,
+will depend on the intended semantics of the L<ld(1)> invocation.
+
 Default value: empty.
 
 =item B<ASFLAGS_FOR_BUILD>
@@ -387,9 +392,18 @@ Since dpkg 1.22.1.
 =item B<LDFLAGS_FOR_BUILD>
 
 Options passed to the build compiler when linking executables or shared
-objects (if the linker is called directly, then B<-Wl> and B<,> have to
-be stripped from these options).
+objects.
+
+B<Note>: It is not safe to pass this variable directly to L<ld(1)>,
+but if the variable needs to be passed anyway,
+then these options should be sanitized to allow only options known to work.
+In general B<-Wl>, B<-l> and B<-L> options should be safe,
+with B<-Wl> getting stripped and B<,> in its arguments replaced with spaces.
+But whether any sanitized option is safe to be passed through,
+will depend on the intended semantics of the L<ld(1)> invocation.
+
 Default value: empty.
+
 Since dpkg 1.22.1.
 
 =back
