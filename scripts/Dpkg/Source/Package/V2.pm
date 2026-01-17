@@ -696,22 +696,26 @@ AUTOGEN_HEADER
         count => 1,
     );
     return '' if not defined $ch_info;
-    my $header = Dpkg::Control->new(type => CTRL_UNKNOWN);
-    $header->{'Description'} = "<short summary of the patch>\n";
-    $header->{'Description'} .=
-"TODO: Put a short summary on the line above and replace this paragraph
+
+    my $patch_date = POSIX::strftime('%b, %d %Y %T %z', gmtime);
+    my $text = <<"HEADER";
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: $ch_info->{'Maintainer'}
+Date: $patch_date
+Subject: [PATCH] <short summary of the patch>
+
+TODO: Put a short summary on the line above and replace this paragraph
 with a longer explanation of this change. Complete the meta-information
 with other relevant fields (see below for details). To make it easier, the
 information below has been extracted from the changelog. Adjust it or drop
-it.\n";
-    $header->{'Description'} .= $ch_info->{'Changes'} . "\n";
-    $header->{'Author'} = $ch_info->{'Maintainer'};
-    my $yyyy_mm_dd = POSIX::strftime('%Y-%m-%d', gmtime);
+it.
 
-    my $text;
-    $text = "$header";
+HEADER
+
     run_vendor_hook('extend-patch-header', \$text, $ch_info);
-    $text .= "\n---
+
+    $text .= <<'TRAILER';
+---
 The information above should follow the Patch Tagging Guidelines, please
 checkout https://dep.debian.net/deps/dep3/ to learn about the format. Here
 are templates for supplementary fields that you might want to add:
@@ -723,7 +727,9 @@ Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
 Forwarded: (no|not-needed|<patch-forwarded-url>)
 Applied-Upstream: <version>, (<commit-url>|commit:<commid-id>)
 Reviewed-By: <name and email of someone who approved/reviewed the patch>
-Last-Update: $yyyy_mm_dd\n\n";
+
+TRAILER
+
     return $text;
 }
 
