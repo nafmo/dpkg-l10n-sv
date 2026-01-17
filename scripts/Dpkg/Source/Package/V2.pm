@@ -722,8 +722,7 @@ are templates for supplementary fields that you might want to add:
 
 Origin: (upstream|backport|vendor|other), (<patch-url>|commit:<commit-id>)
 Bug: <upstream-bugtracker-url>
-Bug-Debian: https://bugs.debian.org/<bugnumber>
-Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Bug-<Vendor>: <vendor-bugtracker-url>
 Forwarded: (no|not-needed|<patch-forwarded-url>)
 Applied-Upstream: <version>, (<commit-url>|commit:<commid-id>)
 Reviewed-By: <name and email of someone who approved/reviewed the patch>
