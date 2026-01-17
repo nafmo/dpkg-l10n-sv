@@ -22,6 +22,8 @@ use Config;
 use Cwd;
 use IPC::Cmd qw(can_run);
 
+use Dpkg::ErrorHandling;
+
 if (! defined $Config{bin_ELF} || $Config{bin_ELF} ne 'define') {
     plan skip_all => 'only ELF is currently supported';
 }
@@ -217,6 +219,7 @@ is_deeply(\%tmp,
 );
 
 # Wildcard test.
+report_options(quiet_warnings => 1);
 my $pat = $sym_file_old->create_symbol('*@GLIBC_PRIVATE 2.3.6.wildcard');
 $sym_file_old->add_symbol($pat, 'libc.so.6');
 $sym_file_old->merge_symbols($obj, '2.6-1');
@@ -239,6 +242,7 @@ is_deeply($sym,
     ),
     'wildcarded symbol',
 );
+report_options(quiet_warnings => 0);
 
 # Save -> Load test.
 use File::Temp;
@@ -992,10 +996,12 @@ ok($sym->get_pattern()->equals($sym_file->create_symbol('(c++|symver)SYMVER_1 1.
 
 # Test old style wildcard support.
 load_patterns_symbols();
+report_options(quiet_warnings => 1);
 $sym = $sym_file->create_symbol('*@SYMVEROPT_2 2');
 ok($sym->is_optional(), 'Old style wildcard is optional');
 is($sym->get_alias_type(), 'symver', 'old style wildcard is a symver pattern');
 is($sym->get_symbolname(), 'SYMVEROPT_2', 'wildcard pattern got renamed');
+report_options(quiet_warnings => 0);
 
 $pat = $sym_file->lookup_pattern('(symver|optional)SYMVEROPT_2', 'libpatterns.so.1');
 $sym->{symbol_templ} = $pat->{symbol_templ};
