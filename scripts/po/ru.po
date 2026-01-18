@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.17.23\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-20 02:18+0100\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2015-04-07 07:02+0200\n"
 "Last-Translator: Yuri Kozlov <yuray@komyakino.ru>\n"
 "Language-Team: Russian <debian-l10n-russian@lists.debian.org>\n"
@@ -2348,6 +2348,11 @@ msgstr "сборка пакета с исходным кодом только д
 
 #: scripts/dpkg-source.pl
 #, perl-format
+msgid "%f field contains the maintainer address"
+msgstr ""
+
+#: scripts/dpkg-source.pl
+#, perl-format
 msgid "cannot build with source format '%s': %s"
 msgstr "невозможно собрать с форматом исходника «%s»: %s"
 
@@ -3286,6 +3291,11 @@ msgstr "неизвестное информационное поле «%s» во
 msgid "control information"
 msgstr "управляющая информация"
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, perl-format
+msgid "unexpected trailing comma in %s field with value \"%s\""
+msgstr ""
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -3391,6 +3401,12 @@ msgstr "не удалось создать каталог %s"
 #| msgid "invalid flag in %s: %s"
 msgid "invalid filename %s"
 msgstr "неправильный флаг в %s: %s"
+
+#: scripts/Dpkg/Email/AddressList.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture string"
+msgid "'%s' is not a valid email address list"
+msgstr "«%s» не является разрешённой строкой архитектуры"
 
 #: scripts/Dpkg/ErrorHandling.pm
 msgid "hint"
@@ -3692,6 +3708,11 @@ msgstr "не удалось проанализировать определен�
 #, perl-format
 msgid "symbol name unspecified: %s"
 msgstr "не задано имя символа: %s"
+
+#: scripts/Dpkg/Shlibs/Symbol.pm
+#, perl-format
+msgid "deprecated wildcard syntax in \"%s\"; use \"%s\" instead"
+msgstr ""
 
 #: scripts/Dpkg/Shlibs/Symbol.pm
 #, fuzzy, perl-format

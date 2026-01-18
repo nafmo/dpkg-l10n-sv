@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-man 1.15.4\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-16 21:20+0000\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2021-04-08 04:43+0200\n"
 "Last-Translator: Michał Kułach <michal.kulach@gmail.com>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -4798,7 +4798,7 @@ msgid ""
 " Homepage: https://wiki.debian.org/Teams/Dpkg\n"
 " Vcs-Browser: https://git.dpkg.org/cgit/dpkg/dpkg.git\n"
 " Vcs-Git: https://git.dpkg.org/git/dpkg/dpkg.git\n"
-" Standards-Version: 4.7.2\n"
+" Standards-Version: 4.7.3\n"
 " Build-Depends:\n"
 "  dpkg-build-api (= 1),\n"
 "  debhelper-compat (= 13),\n"
@@ -5204,18 +5204,48 @@ msgstr ""
 
 #. type: =head2
 #: deb-src-symbols.pod
-msgid "Using #PACKAGE# substitution"
+#, fuzzy
+#| msgid "Using #PACKAGE# substitution"
+msgid "Using metavariable substitutions"
 msgstr "Używanie podstawień #PACKAGE#"
 
 #. type: textblock
 #: deb-src-symbols.pod
 msgid ""
+"In some cases instead of hardcoding some variable text, we can use "
+"metavariables that will be replaced either when generating the symbols file "
+"shipped in the binary package, or during dependency generation."
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+msgid ""
+"Contrary to the I<#MINVER#> metavariable, the following metavariables will "
+"never appear in a symbols file inside a binary package."
+msgstr ""
+
+#. type: =head3
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid "Using #PACKAGE# substitution"
+msgid "Using the #PACKAGE# metavariable"
+msgstr "Używanie podstawień #PACKAGE#"
+
+#. type: textblock
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid ""
+#| "In some rare cases, the name of the library varies between "
+#| "architectures.  To avoid hardcoding the name of the package in the "
+#| "symbols file, you can use the marker I<#PACKAGE#>.  It will be replaced "
+#| "by the real package name during installation of the symbols files.  "
+#| "Contrary to the I<#MINVER#> marker, I<#PACKAGE#> will never appear in a "
+#| "symbols file inside a binary package."
+msgid ""
 "In some rare cases, the name of the library varies between architectures.  "
 "To avoid hardcoding the name of the package in the symbols file, you can use "
-"the marker I<#PACKAGE#>.  It will be replaced by the real package name "
-"during installation of the symbols files.  Contrary to the I<#MINVER#> "
-"marker, I<#PACKAGE#> will never appear in a symbols file inside a binary "
-"package."
+"the I<#PACKAGE#> metavariable.  It will be replaced by the real package name "
+"during installation of the symbols files."
 msgstr ""
 "W niektórych rzadkich przypadkach, nazwa biblioteki różni się między "
 "architekturami. Aby zapobiec kodowaniu nazwy pakietu na sztywno w pliku "
@@ -5223,6 +5253,29 @@ msgstr ""
 "nazwą pakietu podczas instalacji tych plików symboli. W przeciwieństwie do "
 "markera I<#MINVER#>, I<#PACKAGE#> nigdy nie pojawi się w pliku symboli "
 "wewnątrz pakietu binarnego."
+
+#. type: =head2
+#: deb-src-symbols.pod
+msgid "Using the #CURVER# metavariable"
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+msgid ""
+"In some cases, a symbol with an unstable ABI will require a strict "
+"dependency on the current package version.  To avoid hardcoding the current "
+"version in the symbols file, you can use the I<#CURVER#> metavariable.  It "
+"will be replaced by a dependency version constraint in the form of “(= "
+"I<binary-version>)”, where this would be generally be used in combination "
+"with I<#PACKAGE#>."
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid "Cancels a previous B<--no-triggers>."
+msgid "Supported since dpkg 1.23.4."
+msgstr "Anuluje poprzednie B<--no-triggers>."
 
 #. type: =head2
 #: deb-src-symbols.pod
@@ -10756,19 +10809,27 @@ msgstr "B<LDFLAGS>"
 
 #. type: textblock
 #: dpkg-buildflags.pod
-#, fuzzy
-#| msgid ""
-#| "Options passed to the compiler when linking executables or shared objects "
-#| "(if the linker is called directly, then B<-Wl> and B<,> have to be "
-#| "stripped from these options). Default value: empty."
 msgid ""
 "Options passed to the host compiler when linking executables or shared "
-"objects (if the linker is called directly, then B<-Wl> and B<,> have to be "
-"stripped from these options).  Default value: empty."
+"objects."
 msgstr ""
-"Opcje przekazywane do kompilatora podczas łączenia plików wykonywalnych lub "
-"współdzielonych bibliotek (jeśli linker jest wywoływany bezpośrednio, B<-Wl> "
-"i B<,> muszą być usunięte z tych opcji). Wartość domyślna: puste."
+
+#. type: textblock
+#: dpkg-buildflags.pod
+msgid ""
+"B<Note>: It is not safe to pass this variable directly to L<ld(1)>, but if "
+"the variable needs to be passed anyway, then these options should be "
+"sanitized to allow only options known to work.  In general B<-Wl>, B<-l> and "
+"B<-L> options should be safe, with B<-Wl> getting stripped and B<,> in its "
+"arguments replaced with spaces.  But whether any sanitized option is safe to "
+"be passed through, will depend on the intended semantics of the L<ld(1)> "
+"invocation."
+msgstr ""
+
+#. type: textblock
+#: dpkg-buildflags.pod
+msgid "Default value: empty."
+msgstr ""
 
 #. type: =item
 #: dpkg-buildflags.pod
@@ -10928,19 +10989,17 @@ msgstr "B<LDFLAGS>"
 
 #. type: textblock
 #: dpkg-buildflags.pod
-#, fuzzy
-#| msgid ""
-#| "Options passed to the compiler when linking executables or shared objects "
-#| "(if the linker is called directly, then B<-Wl> and B<,> have to be "
-#| "stripped from these options). Default value: empty."
 msgid ""
 "Options passed to the build compiler when linking executables or shared "
-"objects (if the linker is called directly, then B<-Wl> and B<,> have to be "
-"stripped from these options).  Default value: empty.  Since dpkg 1.22.1."
+"objects."
 msgstr ""
-"Opcje przekazywane do kompilatora podczas łączenia plików wykonywalnych lub "
-"współdzielonych bibliotek (jeśli linker jest wywoływany bezpośrednio, B<-Wl> "
-"i B<,> muszą być usunięte z tych opcji). Wartość domyślna: puste."
+
+#. type: textblock
+#: dpkg-buildflags.pod
+#, fuzzy
+#| msgid "Cancels a previous B<--no-triggers>."
+msgid "Since dpkg 1.22.1."
+msgstr "Anuluje poprzednie B<--no-triggers>."
 
 #. type: textblock
 #: dpkg-buildflags.pod
@@ -32309,10 +32368,11 @@ msgstr ""
 #| "sense forking on their own, or where it's not feasible to add the code "
 #| "for them to do this themselves."
 msgid ""
-"B<Warning>: B<start-stop-daemon> cannot check the exit status if the process "
-"fails to execute for B<any> reason.  This is a last resort, and is only "
-"meant for programs that either make no sense forking on their own, or where "
-"it's not feasible to add the code for them to do this themselves."
+"B<Note>: The exit status from a late unexpected failure during the process "
+"initialization cannot be checked, unless the B<--notify-await> option is "
+"used.  It is intended for use with programs that either make no sense "
+"daemonizing on their own, or where it is not feasible or desired to add the "
+"daemonizing and notification code for them to do this themselves."
 msgstr ""
 "Zwykle używa się tej opcji dla programów, które nie odłączają się od "
 "terminala (detach) samoistnie. Ta opcja spowoduje, że B<start-stop-daemon> "
@@ -32334,9 +32394,15 @@ msgstr "B<--no-await>"
 #: start-stop-daemon.pod
 msgid ""
 "Wait for the background process to send a readiness notification before "
-"considering the service started (since version 1.19.3).  This implements "
-"parts of the systemd readiness protocol, as specified in the L<sd_notify(3)> "
-"manual page.  The following variables are supported:"
+"considering the service started (since version 1.19.3).  This option can "
+"only be used with B<--background>."
+msgstr ""
+
+#. type: textblock
+#: start-stop-daemon.pod
+msgid ""
+"This implements parts of the systemd readiness protocol, as specified in the "
+"L<sd_notify(3)> manual page.  The following variables are supported:"
 msgstr ""
 
 #. type: =item
@@ -33894,6 +33960,35 @@ msgstr "B<update-alternatives --auto vi>"
 #| msgid "B<ln>(1), FHS, the Filesystem Hierarchy Standard."
 msgid "L<ln(1)>, FHS (the Filesystem Hierarchy Standard)."
 msgstr "B<ln>(1), FHS - standard hierarchii systemu plików."
+
+#, fuzzy
+#~| msgid ""
+#~| "Options passed to the compiler when linking executables or shared "
+#~| "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~| "be stripped from these options). Default value: empty."
+#~ msgid ""
+#~ "Options passed to the host compiler when linking executables or shared "
+#~ "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~ "be stripped from these options).  Default value: empty."
+#~ msgstr ""
+#~ "Opcje przekazywane do kompilatora podczas łączenia plików wykonywalnych "
+#~ "lub współdzielonych bibliotek (jeśli linker jest wywoływany bezpośrednio, "
+#~ "B<-Wl> i B<,> muszą być usunięte z tych opcji). Wartość domyślna: puste."
+
+#, fuzzy
+#~| msgid ""
+#~| "Options passed to the compiler when linking executables or shared "
+#~| "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~| "be stripped from these options). Default value: empty."
+#~ msgid ""
+#~ "Options passed to the build compiler when linking executables or shared "
+#~ "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~ "be stripped from these options).  Default value: empty.  Since dpkg "
+#~ "1.22.1."
+#~ msgstr ""
+#~ "Opcje przekazywane do kompilatora podczas łączenia plików wykonywalnych "
+#~ "lub współdzielonych bibliotek (jeśli linker jest wywoływany bezpośrednio, "
+#~ "B<-Wl> i B<,> muszą być usunięte z tych opcji). Wartość domyślna: puste."
 
 #, fuzzy
 #~| msgid ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.21.20\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-20 02:18+0100\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2023-02-10 02:16+0100\n"
 "Last-Translator: Sébastien Poher <sebastien@volted.net>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -2319,6 +2319,11 @@ msgstr "construction des sources pour une publication binaire seule"
 
 #: scripts/dpkg-source.pl
 #, perl-format
+msgid "%f field contains the maintainer address"
+msgstr ""
+
+#: scripts/dpkg-source.pl
+#, perl-format
 msgid "cannot build with source format '%s': %s"
 msgstr "impossible de construire avec le format source « %s » : %s"
 
@@ -3244,6 +3249,11 @@ msgstr "champ d'information inconnu « %s » dans les données d'entrée de %s
 msgid "control information"
 msgstr "information de contrôle"
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, perl-format
+msgid "unexpected trailing comma in %s field with value \"%s\""
+msgstr ""
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -3346,6 +3356,12 @@ msgstr "impossible d’ouvrir le répertoire %s"
 #, perl-format
 msgid "invalid filename %s"
 msgstr "nom de fichier %s non valable"
+
+#: scripts/Dpkg/Email/AddressList.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture in list '%s'"
+msgid "'%s' is not a valid email address list"
+msgstr "« %s » n'est pas une architecture autorisée dans la liste « %s »"
 
 #: scripts/Dpkg/ErrorHandling.pm
 msgid "hint"
@@ -3635,6 +3651,11 @@ msgstr "impossible d'analyser la définition de symboles dynamique : %s"
 #, perl-format
 msgid "symbol name unspecified: %s"
 msgstr "nom de symbole non précisé : %s"
+
+#: scripts/Dpkg/Shlibs/Symbol.pm
+#, perl-format
+msgid "deprecated wildcard syntax in \"%s\"; use \"%s\" instead"
+msgstr ""
 
 #: scripts/Dpkg/Shlibs/Symbol.pm
 #, perl-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.22.18\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-20 02:18+0100\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2025-06-04 01:21+0200\n"
 "Last-Translator: Peter Krefting <peter@softwolves.pp.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -2025,6 +2025,11 @@ msgstr "bygger källkod för utgåva med endast binär"
 
 #: scripts/dpkg-source.pl
 #, perl-format
+msgid "%f field contains the maintainer address"
+msgstr ""
+
+#: scripts/dpkg-source.pl
+#, perl-format
 msgid "cannot build with source format '%s': %s"
 msgstr "kan inte bygga med källkodsformatet ”%s”: %s"
 
@@ -2876,6 +2881,11 @@ msgstr "okänt informationsfält ”%s” i indata i %s"
 msgid "control information"
 msgstr "styrinformation"
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, perl-format
+msgid "unexpected trailing comma in %s field with value \"%s\""
+msgstr ""
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -2972,6 +2982,12 @@ msgstr "kan inte öppna katalogen %s"
 #, perl-format
 msgid "invalid filename %s"
 msgstr "ogiltigt filnamn %s"
+
+#: scripts/Dpkg/Email/AddressList.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture in list '%s'"
+msgid "'%s' is not a valid email address list"
+msgstr "”%s” är inte en giltig arkitektur i listan ”%s”"
 
 #: scripts/Dpkg/ErrorHandling.pm
 msgid "hint"
@@ -3259,6 +3275,11 @@ msgstr "kunde inte tolka definition av dynamisk symbol: %s"
 #, perl-format
 msgid "symbol name unspecified: %s"
 msgstr "symbolnamn ej angivet: %s"
+
+#: scripts/Dpkg/Shlibs/Symbol.pm
+#, perl-format
+msgid "deprecated wildcard syntax in \"%s\"; use \"%s\" instead"
+msgstr ""
 
 #: scripts/Dpkg/Shlibs/Symbol.pm
 #, perl-format

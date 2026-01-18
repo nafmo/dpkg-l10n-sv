@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-man 1.21.20\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-16 21:20+0000\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2023-02-05 23:52+0100\n"
 "Last-Translator: Jean-Pierre Giraud <jean-pierregiraud@neuf.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -4885,7 +4885,7 @@ msgid ""
 " Homepage: https://wiki.debian.org/Teams/Dpkg\n"
 " Vcs-Browser: https://git.dpkg.org/cgit/dpkg/dpkg.git\n"
 " Vcs-Git: https://git.dpkg.org/git/dpkg/dpkg.git\n"
-" Standards-Version: 4.7.2\n"
+" Standards-Version: 4.7.3\n"
 " Build-Depends:\n"
 "  dpkg-build-api (= 1),\n"
 "  debhelper-compat (= 13),\n"
@@ -5310,18 +5310,48 @@ msgstr ""
 
 #. type: =head2
 #: deb-src-symbols.pod
-msgid "Using #PACKAGE# substitution"
+#, fuzzy
+#| msgid "Using #PACKAGE# substitution"
+msgid "Using metavariable substitutions"
 msgstr "Utilisation du remplacement de #PACKAGE#"
 
 #. type: textblock
 #: deb-src-symbols.pod
 msgid ""
+"In some cases instead of hardcoding some variable text, we can use "
+"metavariables that will be replaced either when generating the symbols file "
+"shipped in the binary package, or during dependency generation."
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+msgid ""
+"Contrary to the I<#MINVER#> metavariable, the following metavariables will "
+"never appear in a symbols file inside a binary package."
+msgstr ""
+
+#. type: =head3
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid "Using #PACKAGE# substitution"
+msgid "Using the #PACKAGE# metavariable"
+msgstr "Utilisation du remplacement de #PACKAGE#"
+
+#. type: textblock
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid ""
+#| "In some rare cases, the name of the library varies between "
+#| "architectures.  To avoid hardcoding the name of the package in the "
+#| "symbols file, you can use the marker I<#PACKAGE#>.  It will be replaced "
+#| "by the real package name during installation of the symbols files.  "
+#| "Contrary to the I<#MINVER#> marker, I<#PACKAGE#> will never appear in a "
+#| "symbols file inside a binary package."
+msgid ""
 "In some rare cases, the name of the library varies between architectures.  "
 "To avoid hardcoding the name of the package in the symbols file, you can use "
-"the marker I<#PACKAGE#>.  It will be replaced by the real package name "
-"during installation of the symbols files.  Contrary to the I<#MINVER#> "
-"marker, I<#PACKAGE#> will never appear in a symbols file inside a binary "
-"package."
+"the I<#PACKAGE#> metavariable.  It will be replaced by the real package name "
+"during installation of the symbols files."
 msgstr ""
 "Dans de rares cas, le nom de la bibliothèque dépend de l'architecture. Afin "
 "d'éviter de coder le nom du paquet en dur dans le fichier de symboles, il "
@@ -5329,6 +5359,29 @@ msgstr ""
 "vrai nom du paquet lors de l'installation des fichiers de symboles. À la "
 "différence du marqueur I<#MINVER#>, I<#PACKAGE#> n'apparaîtra jamais dans le "
 "fichier de symboles d'un paquet binaire."
+
+#. type: =head2
+#: deb-src-symbols.pod
+msgid "Using the #CURVER# metavariable"
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+msgid ""
+"In some cases, a symbol with an unstable ABI will require a strict "
+"dependency on the current package version.  To avoid hardcoding the current "
+"version in the symbols file, you can use the I<#CURVER#> metavariable.  It "
+"will be replaced by a dependency version constraint in the form of “(= "
+"I<binary-version>)”, where this would be generally be used in combination "
+"with I<#PACKAGE#>."
+msgstr ""
+
+#. type: textblock
+#: deb-src-symbols.pod
+#, fuzzy
+#| msgid "Supported since dpkg 1.20.1."
+msgid "Supported since dpkg 1.23.4."
+msgstr "Pris en charge depuis dpkg 1.20.1."
 
 #. type: =head2
 #: deb-src-symbols.pod
@@ -10744,19 +10797,27 @@ msgstr "B<LDFLAGS>"
 
 #. type: textblock
 #: dpkg-buildflags.pod
-#, fuzzy
-#| msgid ""
-#| "Options passed to the compiler when linking executables or shared objects "
-#| "(if the linker is called directly, then B<-Wl> and B<,> have to be "
-#| "stripped from these options). Default value: empty."
 msgid ""
 "Options passed to the host compiler when linking executables or shared "
-"objects (if the linker is called directly, then B<-Wl> and B<,> have to be "
-"stripped from these options).  Default value: empty."
+"objects."
 msgstr ""
-"Options passées au compilateur lors du processus de liaison des exécutables "
-"ou des objets partagés (si le linker est appelé directement, alors B<-Wl> et "
-"B<,> doivent être retirés de ces options). Valeur par défaut : aucune."
+
+#. type: textblock
+#: dpkg-buildflags.pod
+msgid ""
+"B<Note>: It is not safe to pass this variable directly to L<ld(1)>, but if "
+"the variable needs to be passed anyway, then these options should be "
+"sanitized to allow only options known to work.  In general B<-Wl>, B<-l> and "
+"B<-L> options should be safe, with B<-Wl> getting stripped and B<,> in its "
+"arguments replaced with spaces.  But whether any sanitized option is safe to "
+"be passed through, will depend on the intended semantics of the L<ld(1)> "
+"invocation."
+msgstr ""
+
+#. type: textblock
+#: dpkg-buildflags.pod
+msgid "Default value: empty."
+msgstr ""
 
 #. type: =item
 #: dpkg-buildflags.pod
@@ -10919,19 +10980,17 @@ msgstr "B<LDFLAGS>"
 
 #. type: textblock
 #: dpkg-buildflags.pod
-#, fuzzy
-#| msgid ""
-#| "Options passed to the compiler when linking executables or shared objects "
-#| "(if the linker is called directly, then B<-Wl> and B<,> have to be "
-#| "stripped from these options). Default value: empty."
 msgid ""
 "Options passed to the build compiler when linking executables or shared "
-"objects (if the linker is called directly, then B<-Wl> and B<,> have to be "
-"stripped from these options).  Default value: empty.  Since dpkg 1.22.1."
+"objects."
 msgstr ""
-"Options passées au compilateur lors du processus de liaison des exécutables "
-"ou des objets partagés (si le linker est appelé directement, alors B<-Wl> et "
-"B<,> doivent être retirés de ces options). Valeur par défaut : aucune."
+
+#. type: textblock
+#: dpkg-buildflags.pod
+#, fuzzy
+#| msgid "Since dpkg 1.21.10."
+msgid "Since dpkg 1.22.1."
+msgstr "depuis dpkg 1.21.10)."
 
 #. type: textblock
 #: dpkg-buildflags.pod
@@ -31717,10 +31776,11 @@ msgstr ""
 #| "meant for programs that either make no sense forking on their own, or "
 #| "where it's not feasible to add the code for them to do this themselves."
 msgid ""
-"B<Warning>: B<start-stop-daemon> cannot check the exit status if the process "
-"fails to execute for B<any> reason.  This is a last resort, and is only "
-"meant for programs that either make no sense forking on their own, or where "
-"it's not feasible to add the code for them to do this themselves."
+"B<Note>: The exit status from a late unexpected failure during the process "
+"initialization cannot be checked, unless the B<--notify-await> option is "
+"used.  It is intended for use with programs that either make no sense "
+"daemonizing on their own, or where it is not feasible or desired to add the "
+"daemonizing and notification code for them to do this themselves."
 msgstr ""
 "B<AVERTISSEMENT : start-stop-daemon> ne peut pas vérifier le code de sortie "
 "quand, pour B<une raison ou une autre>, le processus échoue. C'est un "
@@ -31743,9 +31803,26 @@ msgstr "B<--notify-await>"
 #| "B<sd_notify>(3) man page.  The following variables are supported:"
 msgid ""
 "Wait for the background process to send a readiness notification before "
-"considering the service started (since version 1.19.3).  This implements "
-"parts of the systemd readiness protocol, as specified in the L<sd_notify(3)> "
-"manual page.  The following variables are supported:"
+"considering the service started (since version 1.19.3).  This option can "
+"only be used with B<--background>."
+msgstr ""
+"Attend que le processus en arrière-plan envoie une notification de "
+"disponibilité avant de considérer que le service est démarré (depuis la "
+"version 1.19.3). Cela met en œuvre des éléments du protocole de "
+"disponibilité de systemd, comme spécifié dans la page de manuel de "
+"B<sd_notify>(3). Les variables suivantes sont prises en charge :"
+
+#. type: textblock
+#: start-stop-daemon.pod
+#, fuzzy
+#| msgid ""
+#| "Wait for the background process to send a readiness notification before "
+#| "considering the service started (since version 1.19.3).  This implements "
+#| "parts of the systemd readiness protocol, as specified in the "
+#| "B<sd_notify>(3) man page.  The following variables are supported:"
+msgid ""
+"This implements parts of the systemd readiness protocol, as specified in the "
+"L<sd_notify(3)> manual page.  The following variables are supported:"
 msgstr ""
 "Attend que le processus en arrière-plan envoie une notification de "
 "disponibilité avant de considérer que le service est démarré (depuis la "
@@ -33250,6 +33327,37 @@ msgstr ""
 msgid "L<ln(1)>, FHS (the Filesystem Hierarchy Standard)."
 msgstr ""
 "B<ln>(1), FHS (le standard pour l'organisation du système de fichiers)."
+
+#, fuzzy
+#~| msgid ""
+#~| "Options passed to the compiler when linking executables or shared "
+#~| "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~| "be stripped from these options). Default value: empty."
+#~ msgid ""
+#~ "Options passed to the host compiler when linking executables or shared "
+#~ "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~ "be stripped from these options).  Default value: empty."
+#~ msgstr ""
+#~ "Options passées au compilateur lors du processus de liaison des "
+#~ "exécutables ou des objets partagés (si le linker est appelé directement, "
+#~ "alors B<-Wl> et B<,> doivent être retirés de ces options). Valeur par "
+#~ "défaut : aucune."
+
+#, fuzzy
+#~| msgid ""
+#~| "Options passed to the compiler when linking executables or shared "
+#~| "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~| "be stripped from these options). Default value: empty."
+#~ msgid ""
+#~ "Options passed to the build compiler when linking executables or shared "
+#~ "objects (if the linker is called directly, then B<-Wl> and B<,> have to "
+#~ "be stripped from these options).  Default value: empty.  Since dpkg "
+#~ "1.22.1."
+#~ msgstr ""
+#~ "Options passées au compilateur lors du processus de liaison des "
+#~ "exécutables ou des objets partagés (si le linker est appelé directement, "
+#~ "alors B<-Wl> et B<,> doivent être retirés de ces options). Valeur par "
+#~ "défaut : aucune."
 
 #~ msgid ""
 #~ "This space-separated field lists the architectures of the files currently "

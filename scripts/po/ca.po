@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.21.18\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-20 02:18+0100\n"
+"POT-Creation-Date: 2026-01-18 18:28+0100\n"
 "PO-Revision-Date: 2025-11-16 23:17+0100\n"
 "Last-Translator: Guillem Jover <guillem@debian.org>\n"
 "Language-Team: Catalan <debian-l10n-catalan@lists.debian.org>\n"
@@ -2114,6 +2114,11 @@ msgstr "s'està construint el font per a un llançament només binari"
 
 #: scripts/dpkg-source.pl
 #, perl-format
+msgid "%f field contains the maintainer address"
+msgstr ""
+
+#: scripts/dpkg-source.pl
+#, perl-format
 msgid "cannot build with source format '%s': %s"
 msgstr "no es pot construir amb format de font «%s»: %s"
 
@@ -2980,6 +2985,11 @@ msgstr "camp d'informació «%s» desconegut en les dades d'entrada a %s"
 msgid "control information"
 msgstr "informació de control"
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, perl-format
+msgid "unexpected trailing comma in %s field with value \"%s\""
+msgstr ""
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -3078,6 +3088,12 @@ msgstr "no es pot obrir el directori %s"
 #, perl-format
 msgid "invalid filename %s"
 msgstr "nom de fitxer %s no vàlid"
+
+#: scripts/Dpkg/Email/AddressList.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture in list '%s'"
+msgid "'%s' is not a valid email address list"
+msgstr "«%s» no és una cadena d'arquitectura vàlida a la llista «%s»"
 
 #: scripts/Dpkg/ErrorHandling.pm
 msgid "hint"
@@ -3368,6 +3384,11 @@ msgstr "no s'ha pogut analitzar la definició dinàmica del símbol: %s"
 #, perl-format
 msgid "symbol name unspecified: %s"
 msgstr "no s'ha especificat el nom del símbol: %s"
+
+#: scripts/Dpkg/Shlibs/Symbol.pm
+#, perl-format
+msgid "deprecated wildcard syntax in \"%s\"; use \"%s\" instead"
+msgstr ""
 
 #: scripts/Dpkg/Shlibs/Symbol.pm
 #, perl-format
