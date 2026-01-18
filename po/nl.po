@@ -6,10 +6,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: dpkg 1.22.18\n"
+"Project-Id-Version: dpkg 1.23.3\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2025-12-20 02:18+0100\n"
-"PO-Revision-Date: 2025-03-22 23:08+0100\n"
+"POT-Creation-Date: 2026-01-18 18:17+0100\n"
+"PO-Revision-Date: 2025-12-25 19:53+0100\n"
 "Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
 "Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
 "Language: nl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: lib/dpkg/ar.c
 msgid "failed to fstat archive"
@@ -381,10 +381,9 @@ msgstr ""
 "een nieuwere versie van dpkg"
 
 #: lib/dpkg/db-ctrl-upgrade.c
-#, fuzzy, c-format
-#| msgid "info file %s/%s not associated to any package"
+#, c-format
 msgid "metadata file %s/%s not associated to any package"
-msgstr "infobestand %s/%s aan geen enkel pakket gekoppeld"
+msgstr "metadatabestand %s/%s aan geen enkel pakket gekoppeld"
 
 #: lib/dpkg/db-ctrl-upgrade.c src/main/archives.c
 #, c-format
@@ -997,8 +996,7 @@ msgid "alternatives ('|') not allowed in '%s' field"
 msgstr "alternatieven ('|') niet toegestaan in veld '%s'"
 
 #: lib/dpkg/fields.c
-#, fuzzy, c-format
-#| msgid "illegal pending trigger name '%s': %s"
+#, c-format
 msgid "invalid pending trigger name '%s': %s"
 msgstr "ongeldig naam voor in de wacht staande trigger '%s': %s"
 
@@ -1008,8 +1006,7 @@ msgid "duplicate pending trigger '%s'"
 msgstr "dubbele in de wacht staande trigger '%s'"
 
 #: lib/dpkg/fields.c
-#, fuzzy, c-format
-#| msgid "illegal package name in awaited trigger '%s': %s"
+#, c-format
 msgid "invalid package name in awaited trigger '%s': %s"
 msgstr "ongeldige pakketnaam in verwachte trigger '%s': %s"
 
@@ -1377,35 +1374,29 @@ msgstr ""
 "waarvan meerdere exemplaren geïnstalleerd zijn"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "failed to open package info file '%s' for reading"
+#, c-format
 msgid "failed to open package control file '%s' for reading"
-msgstr ""
-"fout bij het openen van bestand '%s' met pakketinformatie om er uit te lezen"
+msgstr "fout bij het openen van pakketcontrolebestand '%s' om er uit te lezen"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "cannot stat package info file '%s'"
+#, c-format
 msgid "cannot stat package control file '%s'"
-msgstr "kan status van bestand '%s' met pakketinformatie niet opvragen"
+msgstr "kan status van pakketcontrolebestand '%s' niet opvragen"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "reading package info file '%s': %s"
+#, c-format
 msgid "reading package control file '%s': %s"
-msgstr "er wordt gelezen uit bestand '%s' met pakketinformatie: %s"
+msgstr "lezen van pakketcontrolebestand '%s': %s"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "cannot mmap package info file '%s'"
+#, c-format
 msgid "cannot mmap package control file '%s'"
-msgstr "kan bestand '%s' met pakketinformatie niet met mmap laden"
+msgstr "kan pakketcontrolebestand '%s' niet in het geheugen inlezen"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "reading package info file '%s'"
+#, c-format
 msgid "reading package control file '%s'"
-msgstr "er wordt gelezen uit bestand '%s' met pakketinformatie"
+msgstr "lezen van pakketcontrolebestand '%s'"
 
 #: lib/dpkg/parse.c
 msgid "empty field name"
@@ -1427,10 +1418,9 @@ msgid "newline in field name '%.*s'"
 msgstr "nieuwe regel in veldnaam '%.*s'"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "MSDOS end of file (^Z) in field name '%.*s'"
+#, c-format
 msgid "MSDOS end of file (Ctrl+Z) in field name '%.*s'"
-msgstr "MSDOS bestandseinde (^Z) in veldnaam '%.*s'"
+msgstr "MSDOS bestandseinde (Ctrl+Z) in veldnaam '%.*s'"
 
 #: lib/dpkg/parse.c
 #, c-format
@@ -1445,11 +1435,10 @@ msgstr ""
 "nieuwe regel)"
 
 #: lib/dpkg/parse.c
-#, fuzzy, c-format
-#| msgid "MSDOS end of file (^Z) in value of field '%.*s' (missing newline?)"
+#, c-format
 msgid "MSDOS end of file (Ctrl+Z) in value of field '%.*s' (missing newline?)"
 msgstr ""
-"MSDOS bestandseinde (^Z) in waarde van veld '%.*s' (ontbrekende nieuwe "
+"MSDOS bestandseinde (Ctrl+Z) in waarde van veld '%.*s' (ontbrekende nieuwe "
 "regel?)"
 
 #: lib/dpkg/parse.c
@@ -1598,14 +1587,12 @@ msgid "version '%s' has bad syntax: %s"
 msgstr "versie '%s' heeft verkeerde syntaxis: %s"
 
 #: lib/dpkg/pkg-spec.c
-#, fuzzy, c-format
-#| msgid "illegal package name in specifier '%s%s%s': %s"
+#, c-format
 msgid "invalid package name in specifier '%s%s%s': %s"
 msgstr "ongeldige pakketnaam in aanduiding '%s%s%s': %s"
 
 #: lib/dpkg/pkg-spec.c
-#, fuzzy, c-format
-#| msgid "illegal architecture name in specifier '%s:%s': %s"
+#, c-format
 msgid "invalid architecture name in specifier '%s:%s': %s"
 msgstr "ongeldige architectuurnaam in aanduiding '%s:%s': %s"
 
@@ -1662,10 +1649,9 @@ msgid "fork failed"
 msgstr "afsplitsen van nieuw proces is mislukt"
 
 #: lib/dpkg/subproc.c
-#, fuzzy, c-format
-#| msgid "%s subprocess failed with wait status code %d"
+#, c-format
 msgid "%s subprocess failed with exit status %d"
-msgstr "subproces %s is mislukt met wachtstatuscode %d"
+msgstr "subproces %s is mislukt met afsluitstatus %d"
 
 #: lib/dpkg/subproc.c
 #, c-format
@@ -1835,9 +1821,7 @@ msgid "failed to rewind trigger interest file '%s'"
 msgstr "terugspoelen van bestand '%s' met triggeraangelegenheden is mislukt"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid ""
-#| "trigger interest file '%s' syntax error; illegal package name '%s': %s"
+#, c-format
 msgid "trigger interest file '%s' syntax error; invalid package name '%s': %s"
 msgstr ""
 "bestand '%s' met triggeraangelegenheden bevat een syntaxisfout; ongeldige "
@@ -1860,10 +1844,7 @@ msgid "syntax error in file triggers file '%s'"
 msgstr "syntaxisfout in bestand '%s' met triggers voor bestanden"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid ""
-#| "file triggers record mentions illegal package name '%s' (for interest in "
-#| "file '%s'): %s"
+#, c-format
 msgid ""
 "file triggers record mentions invalid package name '%s' (for interest in "
 "file '%s'): %s"
@@ -1872,34 +1853,30 @@ msgstr ""
 "aangelegenheid in bestand '%s'): %s"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid ""
-#| "triggers ci file '%s' contains illegal trigger syntax in trigger name "
-#| "'%s': %s"
+#, c-format
 msgid ""
 "triggers package metadata file '%s' contains invalid trigger syntax in "
 "trigger name '%s': %s"
 msgstr ""
-"ci-triggerbestand '%s' bevat een niet-geldige triggersyntaxis in triggernaam "
-"'%s': %s"
+"triggers-pakketmetadatabestand '%s' bevat een ongeldige triggersyntaxis in "
+"triggernaam '%s': %s"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid "unable to open triggers ci file '%s'"
+#, c-format
 msgid "unable to open triggers package metadata file '%s'"
-msgstr "kan ci-triggerbestand '%s' niet openen"
+msgstr "kan triggers-pakketmetadatabestand '%s' niet openen"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid "triggers ci file contains unknown directive syntax"
+#, c-format
 msgid "triggers package metadata file '%s' contains unknown directive syntax"
-msgstr "ci-triggerbestand bevat een richtlijn in een onbekende syntaxis"
+msgstr ""
+"triggers-pakketmetadatabestand '%s' bevat een richtlijn in een onbekende "
+"syntaxis"
 
 #: lib/dpkg/triglib.c
-#, fuzzy, c-format
-#| msgid "triggers ci file contains unknown directive '%s'"
+#, c-format
 msgid "triggers package metadata file '%s' contains unknown directive '%s'"
-msgstr "ci-triggerbestand bevat de onbekende richtlijn '%s'"
+msgstr "triggers-pakketmetadata-bestand '%s' bevat de onbekende richtlijn '%s'"
 
 #: lib/dpkg/triglib.c
 #, c-format
@@ -2379,7 +2356,7 @@ msgstr "hoofdmap %s heeft een ongebruikelijke eigenaar of groep %u:%u"
 #, c-format
 msgid "you might need to pass --root-owner-group, see <%s> for further details"
 msgstr ""
-"Mogelijk moet u --root-owner-group doorgeven, zie <%s> voor meer details"
+"mogelijk moet u --root-owner-group doorgeven, zie <%s> voor meer details"
 
 #: src/deb/build.c
 #, c-format
@@ -2755,22 +2732,7 @@ msgstr ""
 "\n"
 
 #: src/deb/main.c
-#, fuzzy, c-format
-#| msgid ""
-#| "Commands:\n"
-#| "  -b|--build <directory> [<deb>]   Build an archive.\n"
-#| "  -c|--contents <deb>              List contents.\n"
-#| "  -I|--info <deb> [<cfile>...]     Show info to stdout.\n"
-#| "  -W|--show <deb>                  Show information on package(s)\n"
-#| "  -f|--field <deb> [<cfield>...]   Show field(s) to stdout.\n"
-#| "  -e|--control <deb> [<directory>] Extract control info.\n"
-#| "  -x|--extract <deb> <directory>   Extract files.\n"
-#| "  -X|--vextract <deb> <directory>  Extract & list files.\n"
-#| "  -R|--raw-extract <deb> <directory>\n"
-#| "                                   Extract control info and files.\n"
-#| "  --ctrl-tarfile <deb>             Output control tarfile.\n"
-#| "  --fsys-tarfile <deb>             Output filesystem tarfile.\n"
-#| "\n"
+#, c-format
 msgid ""
 "Commands:\n"
 "  -b|--build <directory> [<deb>]   Build an archive.\n"
@@ -2793,10 +2755,12 @@ msgstr ""
 "  -I|--info <deb> [<cbestand>...]  Info tonen op stdout.\n"
 "  -W|--show <deb>                  Informatie over pakket(ten) tonen\n"
 "  -f|--field <deb> [<cveld>...]    Veld(en) op stdout tonen.\n"
-"  -e|--control <deb> [<map>]       Control-info uitpakken.\n"
-"  -x|--extract <deb> <map>         Bestanden uitpakken.\n"
-"  -X|--vextract <deb> <map>        Bestanden uitpakken en opsommen.\n"
-"  -R|--raw-extract <deb> <map>     Control-info en bestanden uitpakken.\n"
+"  -e|--control <deb> [<map>]       Metadatabestanden uitpakken.\n"
+"  -x|--extract <deb> <map>         Bestandssysteembestanden uitpakken.\n"
+"  -X|--vextract <deb> <map>        Bestandssysteembestanden uitpakken en "
+"tonen.\n"
+"  -R|--raw-extract <deb> <map>     Metadatabestanden en\n"
+"                                    bestandssysteembestanden uitpakken.\n"
 "  --ctrl-tarfile <deb>             Control-tar-archief maken.\n"
 "  --fsys-tarfile <deb>             Tar-archief van bestandssysteem maken.\n"
 "\n"
@@ -3000,10 +2964,8 @@ msgid "error reading %s"
 msgstr "fout bij lezen van %s"
 
 #: src/split/info.c
-#, fuzzy
-#| msgid "archive member header"
 msgid "ar header"
-msgstr "koptekst van archiefelement"
+msgstr "ar-koptekst"
 
 #: src/split/info.c
 #, c-format
@@ -3013,10 +2975,8 @@ msgstr ""
 "kop"
 
 #: src/split/info.c
-#, fuzzy
-#| msgid "archive information header member"
 msgid "reading header member"
-msgstr "element van archiefinformatiekoptekst"
+msgstr "element van koptekst lezen"
 
 #: src/split/info.c
 #, c-format
@@ -3104,7 +3064,7 @@ msgstr "pakketarchitectuur"
 
 #: src/split/info.c
 msgid "reading data part member ar header"
-msgstr ""
+msgstr "datadeel-element van ar-koptekst lezen"
 
 #: src/split/info.c
 #, c-format
@@ -3275,18 +3235,7 @@ msgstr ""
 "\n"
 
 #: src/split/main.c
-#, fuzzy, c-format
-#| msgid ""
-#| "Options:\n"
-#| "      --depotdir <directory>       Use <directory> instead of %s/%s.\n"
-#| "      --admindir <directory>       Use <directory> instead of %s.\n"
-#| "      --root <directory>           Use <directory> instead of %s.\n"
-#| "  -S, --partsize <size>            In KiB, for -s (default is 450).\n"
-#| "  -o, --output <file>              Filename, for -j (default is\n"
-#| "                                     <package>_<version>_<arch>.deb).\n"
-#| "  -Q, --npquiet                    Be quiet when -a is not a part.\n"
-#| "      --msdos                      Generate 8.3 filenames.\n"
-#| "\n"
+#, c-format
 msgid ""
 "Options:\n"
 "      --depotdir <directory>       Use <directory> instead of %s/%s.\n"
@@ -3301,13 +3250,11 @@ msgstr ""
 "Opties:\n"
 "    --depotdir <map>             <map> gebruiken in plaats van %s/%s.\n"
 "    --admindir <map>             <map> gebruiken in plaats van %s.\n"
-"\n"
 "    --root <map>                 <map> gebruiken in plaats van %s.\n"
 "    -S|--partsize <grootte>      In KiB, voor -s (standaard is 450).\n"
 "    -o|--output <bestand>        Bestandsnaam, voor -j (standaard is\n"
 "                                   <pakket>_<versie>_<architectuur>.deb).\n"
 "    -Q|--npquiet                 Stille verwerking als -a geen deel is.\n"
-"    --msdos                      Type 8.3 bestandsnamen genereren.\n"
 "\n"
 
 #: src/split/main.c
@@ -3590,16 +3537,12 @@ msgstr ""
 "opgeven.\n"
 
 #: src/divert/main.c
-#, fuzzy
-#| msgid ""
-#| "please specify --no-rename explicitly, the default will change to --"
-#| "rename in 1.20.x"
 msgid ""
 "please specify --no-rename explicitly, the default will change to --rename "
 "not before 1.23.x"
 msgstr ""
-"gelieve --no-rename expliciet te vermelden. In versie 1.20.x wordt --rename "
-"de standaard"
+"gelieve --no-rename expliciet te vermelden. De standaard zal niet vóór "
+"versie 1.23.x naar --rename veranderen"
 
 #: src/divert/main.c utils/update-alternatives.c
 #, c-format
@@ -3954,8 +3897,7 @@ msgid "takes one argument, the trigger name"
 msgstr "verwacht slechts een argument, de naam van de trigger"
 
 #: src/trigger/main.c
-#, fuzzy, c-format
-#| msgid "illegal awaited package name '%s': %s"
+#, c-format
 msgid "invalid awaited package name '%s': %s"
 msgstr "ongeldige naam voor pakket waarop gewacht wordt '%s': %s"
 
@@ -3986,27 +3928,21 @@ msgstr "geen pakketten gevonden die overeenkomen met %s"
 #. can use Unicode box characters.
 #.
 #: src/query/main.c
-#, fuzzy
-#| msgid ""
-#| "Desired=Unknown/Install/Remove/Purge/Hold\n"
-#| "| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-"
-#| "pend\n"
-#| "|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)\n"
 msgid ""
 "+-- Desired=Unknown/Install/Remove/Purge/Hold\n"
 "|+- Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-"
 "pend\n"
 "||+ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)\n"
 msgstr ""
-"Gevraagd=(U)onbekend/(I)nstalleren/ve(R)wijderen/(P)wissen/(H)ouden\n"
-"| Status=Niet/Inst/Conf/Uitgep/halF-geconf/Halfgeïnst/verWacht-trig/Trig-"
+"+-- Gevraagd=(U)onbekend/(I)nstalleren/ve(R)wijderen/(P)wissen/(H)ouden\n"
+"|+- Status=Niet/Inst/Conf/Uitgep/halFgeconf/Halfgeïnst/trigverWacht/Trig-"
 "bezig\n"
-"|/ Fout?=(geen)/heRinst. nodig/ (Status,Fout: hoofdletter=ernstig)\n"
+"||+ Fout?=(geen)/heRinst. nodig/ (Status,Fout: hoofdletter=ernstig)\n"
 
 #: src/query/main.c
 msgctxt "query-list-header"
 msgid "|"
-msgstr ""
+msgstr "|"
 
 #: src/query/main.c
 msgid "Name"
@@ -4027,17 +3963,17 @@ msgstr "Omschrijving"
 #: src/query/main.c
 msgctxt "query-list-header"
 msgid "+++-"
-msgstr ""
+msgstr "+++-"
 
 #: src/query/main.c
 msgctxt "query-list-header"
 msgid "="
-msgstr ""
+msgstr "="
 
 #: src/query/main.c
 msgctxt "query-list-header"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: src/query/main.c
 msgid "showing package list on pager"
@@ -5165,8 +5101,6 @@ msgid "The following packages do not have an architecture:\n"
 msgstr "De volgende pakketten hebben geen archtectuuraanduiding:\n"
 
 #: src/main/enquiry.c
-#, fuzzy
-#| msgid "The following packages have an illegal architecture:\n"
 msgid "The following packages have an invalid architecture:\n"
 msgstr ""
 "De volgende pakketten gebruiken een ongeldige architectuuraanduiding:\n"
@@ -5443,47 +5377,7 @@ msgid "Debian '%s' package management program version %s.\n"
 msgstr "Programma voor Debian pakketbeheer '%s' versie %s.\n"
 
 #: src/main/main.c
-#, fuzzy, c-format
-#| msgid ""
-#| "Commands:\n"
-#| "  -i|--install       <.deb file name>... | -R|--recursive <directory>...\n"
-#| "  --unpack           <.deb file name>... | -R|--recursive <directory>...\n"
-#| "  -A|--record-avail  <.deb file name>... | -R|--recursive <directory>...\n"
-#| "  --configure        <package>... | -a|--pending\n"
-#| "  --triggers-only    <package>... | -a|--pending\n"
-#| "  -r|--remove        <package>... | -a|--pending\n"
-#| "  -P|--purge         <package>... | -a|--pending\n"
-#| "  -V|--verify [<package>...]       Verify the integrity of package(s).\n"
-#| "  --get-selections [<pattern>...]  Get list of selections to stdout.\n"
-#| "  --set-selections                 Set package selections from stdin.\n"
-#| "  --clear-selections               Deselect every non-essential package.\n"
-#| "  --update-avail [<Packages-file>] Replace available packages info.\n"
-#| "  --merge-avail [<Packages-file>]  Merge with info from file.\n"
-#| "  --clear-avail                    Erase existing available info.\n"
-#| "  --forget-old-unavail             Forget uninstalled unavailable pkgs.\n"
-#| "  -s|--status [<package>...]       Display package status details.\n"
-#| "  -p|--print-avail [<package>...]  Display available version details.\n"
-#| "  -L|--listfiles <package>...      List files 'owned' by package(s).\n"
-#| "  -l|--list [<pattern>...]         List packages concisely.\n"
-#| "  -S|--search <pattern>...         Find package(s) owning file(s).\n"
-#| "  -C|--audit [<package>...]        Check for broken package(s).\n"
-#| "  --yet-to-unpack                  Print packages selected for "
-#| "installation.\n"
-#| "  --predep-package                 Print pre-dependencies to unpack.\n"
-#| "  --add-architecture <arch>        Add <arch> to the list of "
-#| "architectures.\n"
-#| "  --remove-architecture <arch>     Remove <arch> from the list of "
-#| "architectures.\n"
-#| "  --print-architecture             Print dpkg architecture.\n"
-#| "  --print-foreign-architectures    Print allowed foreign architectures.\n"
-#| "  --assert-help                    Show help on assertions.\n"
-#| "  --assert-<feature>               Assert support for the specified "
-#| "feature.\n"
-#| "  --validate-<thing> <string>      Validate a <thing>'s <string>.\n"
-#| "  --compare-versions <a> <op> <b>  Compare version numbers - see below.\n"
-#| "  --force-help                     Show help on forcing.\n"
-#| "  -Dh|--debug=help                 Show help on debugging.\n"
-#| "\n"
+#, c-format
 msgid ""
 "Commands:\n"
 "  -i|--install       <.deb file name>... | -R|--recursive <directory>...\n"
@@ -5524,16 +5418,16 @@ msgid ""
 "\n"
 msgstr ""
 "Commando's:\n"
-"  -i|--install      <.deb-bestandsnaam> ... | -R|--recursive <map> ...\n"
-"  --unpack          <.deb-bestandsnaam> ... | -R|--recursive <map> ...\n"
-"  -A|--record-avail <.deb-bestandsnaam> ... | -R|--recursive <map> ...\n"
-"  --configure       <pakket> ... | -a|--pending\n"
-"  --triggers-only   <pakket> ... | -a|--pending\n"
-"  -r|--remove       <pakket> ... | -a|--pending\n"
-"  -P|--purge        <pakket> ... | -a|--pending\n"
-"  -V|--verify  <pakket>  ...       De integriteit van pakket(ten) "
+"  -i|--install      <.deb-bestandsnaam>... | -R|--recursive <map> ...\n"
+"  --unpack          <.deb-bestandsnaam>... | -R|--recursive <map> ...\n"
+"  -A|--record-avail <.deb-bestandsnaam>... | -R|--recursive <map> ...\n"
+"  --configure       <pakket>... | -a|--pending\n"
+"  --triggers-only   <pakket>... | -a|--pending\n"
+"  -r|--remove       <pakket>... | -a|--pending\n"
+"  -P|--purge        <pakket>... | -a|--pending\n"
+"  -V|--verify  [<pakket>...]       De integriteit van pakket(ten) "
 "verifiëren.\n"
-"  --get-selections [<patroon> ...] De lijst van selecties op stdout tonen.\n"
+"  --get-selections [<patroon>...]  De lijst van selecties op stdout tonen.\n"
 "  --set-selections                 Pakketselecties instellen vanuit stdin.\n"
 "  --clear-selections               Elk niet-essentieel pakket deselecteren.\n"
 "  --update-avail [<Packages-best>] Info over beschikbare pakketten "
@@ -5541,8 +5435,6 @@ msgstr ""
 "  --merge-avail [<Packages-best>]  Met info uit bestand samenvoegen.\n"
 "  --clear-avail                    Huidige info over beschikbaarheid "
 "vervangen.\n"
-"  --forget-old-unavail             Niet-geïnstalleerde niet-beschikbare\n"
-"                                     pakketten vergeten.\n"
 "  -s|--status <pakket> ...         De statusinfo van pakket tonen.\n"
 "  -p|--print-avail <pakket> ...    Info over beschikbare versie tonen.\n"
 "  -L|--listfiles <pakket> ...      Bestanden die 'van' pakket zijn tonen.\n"
@@ -5551,7 +5443,7 @@ msgstr ""
 "bevatten.\n"
 "  -C|--audit [<pakket> ...]        Controleren op defect(e) pakket(ten).\n"
 "  --yet-to-unpack                  Voor installatie geselecteerde\n"
-"                                     pakketten weergeven.\n"
+"                                    pakketten weergeven.\n"
 "  --predep-package                 Uit te pakken voorvereisten weergeven.\n"
 "  --add-architecture <arch>        <arch> aan architecturenlijst toevoegen.\n"
 "  --remove-architecture <arch>     <arch> uit architecturenlijst "
@@ -5562,9 +5454,10 @@ msgstr ""
 "  --assert-help                    Hulp i.v.m. bevestigingen tonen.\n"
 "\n"
 "  --assert-<functionaliteit>       Ondersteuning voor de vermelde\n"
-"                                     functionaliteit bevestigen.\n"
+"                                    functionaliteit bevestigen.\n"
 "  --validate-<ding> <tekenreeks>   Een <tekenreeks> van <ding> valideren.\n"
-"  --compare-versions <a> <op> <b>  Versienummers vergelijken - zie onder.\n"
+"  --compare-versions <a> <op> <b>  Versienummers vergelijken - zie "
+"hieronder.\n"
 "  --force-help                     Hulp over forceren tonen.\n"
 "  -Dh|--debug=help                 Hulp over debuggen tonen.\n"
 "\n"
@@ -5824,10 +5717,9 @@ msgid "status logger"
 msgstr "statuslogger"
 
 #: src/main/main.c
-#, fuzzy, c-format
-#| msgid "architecture name '%s' is invalid: %s"
+#, c-format
 msgid "architecture '%s' is invalid: %s"
-msgstr "architectuurnaam '%s' is niet geldig: %s"
+msgstr "architectuur '%s' is niet geldig: %s"
 
 #: src/main/main.c
 #, c-format
@@ -5854,10 +5746,9 @@ msgstr ""
 "verwijderen"
 
 #: src/main/main.c
-#, fuzzy, c-format
-#| msgid "couldn't open '%i' for stream"
+#, c-format
 msgid "cannot open '%i' for stream"
-msgstr "kon '%i' niet openen voor een stroom"
+msgstr "kan '%i' niet openen voor een stroom"
 
 #: src/main/main.c
 #, c-format
@@ -6058,10 +5949,9 @@ msgid "Removing %s (%s) ...\n"
 msgstr "%s (%s) wordt verwijderd ...\n"
 
 #: src/main/remove.c src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "unable to delete used-up depot file '%s'"
+#, c-format
 msgid "unable to delete package metadata file '%s'"
-msgstr "kan opgebruikt depotbestand '%s' niet verwijderen"
+msgstr "kan pakketmetadatabestand '%s' niet verwijderen"
 
 #: src/main/remove.c
 #, c-format
@@ -6146,10 +6036,9 @@ msgstr ""
 "niet instellen"
 
 #: src/main/script.c
-#, fuzzy, c-format
-#| msgid "old %s package %s script"
+#, c-format
 msgid "old %s package %s maintainer script"
-msgstr "van het verouderd pakket %s het script %s"
+msgstr "pakket %s met verouderd beheerdersscript %s"
 
 #: src/main/script.c
 #, c-format
@@ -6157,10 +6046,9 @@ msgid "unable to stat %s '%s'"
 msgstr "kan de status van %s '%s' niet opvragen"
 
 #: src/main/script.c
-#, fuzzy, c-format
-#| msgid "new %s package %s script"
+#, c-format
 msgid "new %s package %s maintainer script"
-msgstr "van het nieuwe pakket %s het script %s"
+msgstr "pakket %s met nieuw beheerdersscript %s"
 
 #: src/main/script.c
 #, c-format
@@ -6168,17 +6056,15 @@ msgid "unable to stat %s '%s': %s"
 msgstr "kan de status van %s '%s' niet opvragen: %s"
 
 #: src/main/script.c
-#, fuzzy, c-format
-#| msgid "trying script from the new package instead ..."
+#, c-format
 msgid "trying %s maintainer script from the new %s package instead ..."
-msgstr "script uit het nieuwe pakket wordt geprobeerd als alternatief..."
+msgstr ""
+"beheerdersscript %s uit nieuw pakket %s wordt geprobeerd als alternatief..."
 
 #: src/main/script.c
-#, fuzzy, c-format
-#| msgid "there is no script in the new version of the package - giving up"
+#, c-format
 msgid "missing %s maintainer script in new %s package, giving up"
-msgstr ""
-"er is geen script in de nieuwe versie van het pakket - er wordt opgegeven"
+msgstr "ontbrekend beheerdersscript %s in nieuw pakket %s; er wordt opgegeven"
 
 #: src/main/script.c
 msgid "... it looks like that went OK"
@@ -6210,8 +6096,7 @@ msgid "unexpected data after package and selection at line %d"
 msgstr "onverwachte gegevens na pakket en selectie op regel %d"
 
 #: src/main/select.c
-#, fuzzy, c-format
-#| msgid "illegal package name at line %d: %s"
+#, c-format
 msgid "invalid package name at line %d: %s"
 msgstr "ongeldige pakketnaam op regel %d: %s"
 
@@ -6401,62 +6286,55 @@ msgstr "fout bij sluiten van %s"
 
 #: src/main/unpack.c
 #, fuzzy, c-format
-#| msgid "old version of package has overly-long info file name starting '%s'"
+#| msgid ""
+#| "old version of package has overly-long meatada file name (starting with "
+#| "'%.*s')"
 msgid ""
-"old version of package has overly-long meatada file name (starting with "
+"old version of package has overly-long metadata file name (starting with "
 "'%.*s')"
 msgstr ""
-"oude versie van pakket heeft te lange infobestandsnaam beginnend met '%s'"
+"oude versie van pakket heeft te lange metadatabestandsnaam (beginnend met "
+"'%.*s')"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "unable to remove obsolete info file '%s'"
+#, c-format
 msgid "unable to remove obsolete package metadata file '%s'"
-msgstr "kan verouderd infobestand '%s' niet verwijderen"
+msgstr "kan verouderd metadatabestand '%s' van pakket niet verwijderen"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "unable to install (supposed) new info file '%s'"
+#, c-format
 msgid "unable to install (supposed) new package metadata file '%s'"
-msgstr "kan (waarschijnlijk) nieuwe infobestand '%s' niet installeren"
+msgstr ""
+"kan (verondersteld) nieuw metadatabestand '%s' van pakket niet installeren"
 
 #: src/main/unpack.c
 msgid "unable to open temp control directory"
 msgstr "kan tijdelijke controlemap niet openen"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid ""
-#| "package contains overly-long control info file name (starting '%.50s')"
+#, c-format
 msgid "package has overly-long metadata file name (starting with '%.*s')"
-msgstr ""
-"bestandsnaam van het controle-infobestand van dit pakket is te lang "
-"(beginnend met '%.50s')"
+msgstr "metadatabestandsnaam van dit pakket is te lang (beginnend met '%.*s')"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "package control info contained directory '%s'"
+#, c-format
 msgid "package metadata contained directory '%s'"
-msgstr "controle-info van het pakket bevatte map '%s'"
+msgstr "metadata van het pakket bevatte map '%s'"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "package control info rmdir of '%s' did not say not a dir"
+#, c-format
 msgid "package metadata rmdir of '%s' did not say not a dir"
-msgstr ""
-"rmdir '%s' uit pakketcontrole-info zei niet dat het niet om een map gaat"
+msgstr "pakketmetadata rmdir van '%s' zei niet dat het geen map was"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "package %s contained list as info file"
+#, c-format
 msgid "package %s contained '%s' as a metadata file"
-msgstr "pakket %s bevatte een lijst als infobestand"
+msgstr "pakket %s bevatte '%s' als een metadatabestand"
 
 #: src/main/unpack.c
-#, fuzzy, c-format
-#| msgid "unable to install new info file '%s' as '%s'"
+#, c-format
 msgid "unable to install new metadata file '%s' as '%s'"
-msgstr "kan nieuw infobestand '%s' niet installeren als '%s'"
+msgstr "kan nieuw metadatabestand '%s' niet installeren als '%s'"
 
 #: src/main/unpack.c
 #, c-format
@@ -6519,10 +6397,8 @@ msgid "(Noting disappearance of %s, which has been completely replaced.)\n"
 msgstr "(Verdwijning van %s is opgemerkt; het werd totaal vervangen.)\n"
 
 #: src/main/unpack.c
-#, fuzzy
-#| msgid "package field value extraction"
 msgid "package metadata files extraction"
-msgstr "uitpakken van de waarde van het pakketveld"
+msgstr "uitpakken van pakketmetadatabestanden"
 
 #: src/main/unpack.c
 #, c-format
@@ -6595,16 +6471,14 @@ msgstr ""
 "bijwerking van beschikbare pakketten"
 
 #: src/main/update.c
-#, fuzzy, c-format
-#| msgid "Replacing available packages info, using %s.\n"
+#, c-format
 msgid "Replacing available packages information from %s.\n"
-msgstr "De oude info over beschikbare pakketten wordt vervangen door %s.\n"
+msgstr "Info over beschikbare pakketten vervangen vanuit %s.\n"
 
 #: src/main/update.c
-#, fuzzy, c-format
-#| msgid "Updating available packages info, using %s.\n"
+#, c-format
 msgid "Updating available packages information from %s.\n"
-msgstr "De info over beschikbare pakketten wordt bijgewerkt met %s.\n"
+msgstr "Info over beschikbare pakketten bijwerken vanuit %s.\n"
 
 #: src/main/update.c
 #, c-format
@@ -6627,31 +6501,7 @@ msgid "%s version %s.\n"
 msgstr "%s versie %s.\n"
 
 #: utils/update-alternatives.c
-#, fuzzy, c-format
-#| msgid ""
-#| "Commands:\n"
-#| "  --install <link> <name> <path> <priority>\n"
-#| "    [--slave <link> <name> <path>] ...\n"
-#| "                           add a group of alternatives to the system.\n"
-#| "  --remove <name> <path>   remove <path> from the <name> group "
-#| "alternative.\n"
-#| "  --remove-all <name>      remove <name> group from the alternatives "
-#| "system.\n"
-#| "  --auto <name>            switch the master link <name> to automatic "
-#| "mode.\n"
-#| "  --display <name>         display information about the <name> group.\n"
-#| "  --query <name>           machine parseable version of --display "
-#| "<name>.\n"
-#| "  --list <name>            display all targets of the <name> group.\n"
-#| "  --get-selections         list master alternative names and their "
-#| "status.\n"
-#| "  --set-selections         read alternative status from standard input.\n"
-#| "  --config <name>          show alternatives for the <name> group and ask "
-#| "the\n"
-#| "                           user to select which one to use.\n"
-#| "  --set <name> <path>      set <path> as alternative for <name>.\n"
-#| "  --all                    call --config on all alternatives.\n"
-#| "\n"
+#, c-format
 msgid ""
 "Commands:\n"
 "  --install <link> <name> <path> <priority>\n"
@@ -6675,8 +6525,8 @@ msgid ""
 msgstr ""
 "Commando's:\n"
 "  --install <link> <naam> <pad> <prioriteit>\n"
-"    [--slave <link> <naam> <pad>] ...\n"
-"                        een groep van alternatieven toevoegen aan het "
+"    [--slave <link> <naam> <pad>]...\n"
+"                        een groep met alternatieven toevoegen aan het "
 "systeem.\n"
 "  --remove <naam> <pad> <pad> uit de alternatievengroep <naam> verwijderen.\n"
 "  --remove-all <naam>   groep <naam> uit het alternatievensysteem "
@@ -6687,10 +6537,9 @@ msgstr ""
 "  --query <naam>        machineleesbare versie van --display <naam>.\n"
 "  --list <naam>         alle doelen in de groep <naam> tonen.\n"
 "  --get-selections      hoofdnamen van alternatieven en hun status tonen.\n"
-"  --set-selections      status van alternatieven van standaard-input lezen.\n"
+"  --set-selections      status van alternatieven van standaardinvoer lezen.\n"
 "  --config <naam>       alle alternatieven voor de groep <naam> tonen\n"
-"                          en de gebruiker vragen welke gebruikt moet "
-"worden.\n"
+"                         en de gebruiker vragen welke gebruikt moet worden.\n"
 "  --set <naam> <pad>    <pad> instellen als alternatief voor <naam>.\n"
 "  --all                 --config uitvoeren voor alle alternatieven.\n"
 "\n"
@@ -7102,7 +6951,7 @@ msgstr "koppeling %s wordt hernoemd van %s%s naar %s%s"
 msgid "automatic updates of %s/%s are disabled; leaving it alone"
 msgstr ""
 "automatische opwaarderingen van %s/%s zijn uitgeschakeld; het wordt met rust "
-"gelaten."
+"gelaten"
 
 #: utils/update-alternatives.c
 #, c-format
