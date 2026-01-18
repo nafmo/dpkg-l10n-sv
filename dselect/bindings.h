@@ -57,8 +57,8 @@ private:
 	bool bind(int key, const char *action);
 
 public:
-	int name2key(const char *name);
-	const char *key2name(int key);
+	static int name2key(const char *name);
+	static const char *key2name(int key);
 
 	bool bind(const char *name, const char *action)
 	{ return bind(name2key(name), action); }
