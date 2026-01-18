@@ -22,6 +22,10 @@
 /* NLS can be disabled through the configure --disable-nls option.  */
 #if ENABLE_NLS
 
+# ifndef __has_attribute
+# define __has_attribute(x)	0
+# endif
+
 # if __has_attribute(__format_arg__)
 #   define GETTEXT_ATTR_FMT_ARG(n) __attribute__((__format_arg__(n)))
 # else
