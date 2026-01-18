@@ -118,7 +118,7 @@ extracthalf(const char *debar, const char *dir,
 	off_t ctrllennum, memberlen = 0;
 	ssize_t rc;
 	int dummy;
-	pid_t c1 = 0, c2, c3;
+	pid_t c1 = 0, c2;
 	int p1[2], p2[2];
 	int p2_out;
 	char nlc;
@@ -324,6 +324,8 @@ extracthalf(const char *debar, const char *dir,
 	dpkg_ar_close(ar);
 
 	if (taroption) {
+		pid_t c3;
+
 		close(p2[1]);
 
 		c3 = subproc_fork();
