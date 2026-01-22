@@ -103,7 +103,8 @@ schroot -c "$chroot" -r -- make $checkflags distcheck
 
 # Prepare for packaged release.
 mkdir -p "$dirbuild"
-cp "dpkg-$relver.tar.xz" "$dirbuild/"
+mv "dpkg-$relver.tar.xz" "$dirbuild/"
+mv "Dpkg-$relver.tar.gz" "$dirbuild/"
 
 # Teardown pre-release chroot.
 schroot -c "$chroot" -e
