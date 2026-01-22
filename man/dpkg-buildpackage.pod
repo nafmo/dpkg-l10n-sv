@@ -615,15 +615,16 @@ The specific OpenPGP backends supported in order of preference are:
 
 =item B<sop>
 
-(any conforming Stateless OpenPGP implementation)
+Any conforming Stateless OpenPGP (SOP) implementation,
+such as sqop, rsop, gosop or pgpainless-cli.
 
 =item B<sq>
 
-(from Sequoia-PGP)
+From Sequoia-PGP.
 
 =item B<gpg>
 
-(from GnuPG)
+From GnuPG.
 
 =back
 
@@ -951,6 +952,6 @@ L<dpkg-genbuildinfo(1)>,
 L<dpkg-genchanges(1)>,
 L<fakeroot(1)>,
 L<lintian(1)>,
-L<https://datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/>,
+L<SOP|https://datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/>,
 L<sq(1)>,
 L<gpg(1)>.
