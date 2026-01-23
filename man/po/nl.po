@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-man 1.23.3\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2026-01-18 18:17+0100\n"
+"POT-Creation-Date: 2026-01-23 01:41+0100\n"
 "PO-Revision-Date: 2025-12-28 23:00+0100\n"
 "Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
 "Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
@@ -13116,7 +13116,11 @@ msgstr "B<sop>"
 
 #. type: textblock
 #: dpkg-buildpackage.pod
-msgid "(any conforming Stateless OpenPGP implementation)"
+#, fuzzy
+#| msgid "(any conforming Stateless OpenPGP implementation)"
+msgid ""
+"Any conforming Stateless OpenPGP (SOP) implementation, such as sqop, rsop, "
+"gosop or pgpainless-cli."
 msgstr "(elke conforme Stateless OpenPGP-implementatie)"
 
 #. type: =item
@@ -13126,7 +13130,9 @@ msgstr "B<sq>"
 
 #. type: textblock
 #: dpkg-buildpackage.pod
-msgid "(from Sequoia-PGP)"
+#, fuzzy
+#| msgid "(from Sequoia-PGP)"
+msgid "From Sequoia-PGP."
 msgstr "(van Sequoia-PGP)"
 
 #. type: =item
@@ -13136,7 +13142,9 @@ msgstr "B<gpg>"
 
 #. type: textblock
 #: dpkg-buildpackage.pod
-msgid "(from GnuPG)"
+#, fuzzy
+#| msgid "(from GnuPG)"
+msgid "From GnuPG."
 msgstr "(van GnuPG)"
 
 #. type: =item
@@ -13810,10 +13818,17 @@ msgstr ""
 
 #. type: textblock
 #: dpkg-buildpackage.pod
+#, fuzzy
+#| msgid ""
+#| "I<%PKGDOCDIR%/spec/rootless-builds.txt>, L<dpkg-source(1)>, L<dpkg-"
+#| "architecture(1)>, L<dpkg-buildflags(1)>, L<dpkg-genbuildinfo(1)>, L<dpkg-"
+#| "genchanges(1)>, L<fakeroot(1)>, L<lintian(1)>, L<https://"
+#| "datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/>, L<sq(1)>, "
+#| "L<gpg(1)>."
 msgid ""
 "I<%PKGDOCDIR%/spec/rootless-builds.txt>, L<dpkg-source(1)>, L<dpkg-"
 "architecture(1)>, L<dpkg-buildflags(1)>, L<dpkg-genbuildinfo(1)>, L<dpkg-"
-"genchanges(1)>, L<fakeroot(1)>, L<lintian(1)>, L<https://"
+"genchanges(1)>, L<fakeroot(1)>, L<lintian(1)>, L<SOP|https://"
 "datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/>, L<sq(1)>, "
 "L<gpg(1)>."
 msgstr ""

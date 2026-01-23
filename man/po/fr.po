@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-man 1.21.20\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2026-01-18 18:28+0100\n"
+"POT-Creation-Date: 2026-01-23 01:41+0100\n"
 "PO-Revision-Date: 2023-02-05 23:52+0100\n"
 "Last-Translator: Jean-Pierre Giraud <jean-pierregiraud@neuf.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -13903,7 +13903,9 @@ msgstr "B<source>"
 #: dpkg-buildpackage.pod
 #, fuzzy
 #| msgid "B<sop> (any conforming Stateless OpenPGP implementation)"
-msgid "(any conforming Stateless OpenPGP implementation)"
+msgid ""
+"Any conforming Stateless OpenPGP (SOP) implementation, such as sqop, rsop, "
+"gosop or pgpainless-cli."
 msgstr "B<sop> (toute implémentation conforme à Stateless OpenPGP)"
 
 #. type: =item
@@ -13915,7 +13917,7 @@ msgstr ""
 #: dpkg-buildpackage.pod
 #, fuzzy
 #| msgid "B<sq> (from Sequoia-PGP)"
-msgid "(from Sequoia-PGP)"
+msgid "From Sequoia-PGP."
 msgstr "B<sq> (de Sequoia-PGP)"
 
 #. type: =item
@@ -13927,7 +13929,7 @@ msgstr ""
 #: dpkg-buildpackage.pod
 #, fuzzy
 #| msgid "B<gpg> (from GnuPG)"
-msgid "(from GnuPG)"
+msgid "From GnuPG."
 msgstr "B<gpg> (de GnuPG)"
 
 #. type: =item
@@ -14619,7 +14621,7 @@ msgstr ""
 msgid ""
 "I<%PKGDOCDIR%/spec/rootless-builds.txt>, L<dpkg-source(1)>, L<dpkg-"
 "architecture(1)>, L<dpkg-buildflags(1)>, L<dpkg-genbuildinfo(1)>, L<dpkg-"
-"genchanges(1)>, L<fakeroot(1)>, L<lintian(1)>, L<https://"
+"genchanges(1)>, L<fakeroot(1)>, L<lintian(1)>, L<SOP|https://"
 "datatracker.ietf.org/doc/draft-dkg-openpgp-stateless-cli/>, L<sq(1)>, "
 "L<gpg(1)>."
 msgstr ""

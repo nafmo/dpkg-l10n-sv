@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: dpkg 1.23.4\n"
+"Project-Id-Version: dpkg 1.23.5\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2026-01-18 18:28+0100\n"
+"POT-Creation-Date: 2026-01-23 01:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -2326,6 +2326,11 @@ msgstr ""
 msgid "unexpected trailing comma in %s field with value \"%s\""
 msgstr ""
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, perl-format
+msgid "cannot parse %s field value \"%s\""
+msgstr ""
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -2423,9 +2428,14 @@ msgstr ""
 msgid "invalid filename %s"
 msgstr ""
 
+#: scripts/Dpkg/Email/Address.pm
+#, perl-format
+msgid "invalid email address '%s'"
+msgstr ""
+
 #: scripts/Dpkg/Email/AddressList.pm
 #, perl-format
-msgid "'%s' is not a valid email address list"
+msgid "invalid email address list '%s'"
 msgstr ""
 
 #: scripts/Dpkg/ErrorHandling.pm

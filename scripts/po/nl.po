@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.21.19\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2026-01-18 18:28+0100\n"
+"POT-Creation-Date: 2026-01-23 01:41+0100\n"
 "PO-Revision-Date: 2023-02-02 17:51+0100\n"
 "Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
 "Language-Team: \n"
@@ -3130,6 +3130,12 @@ msgstr "control-informatie"
 msgid "unexpected trailing comma in %s field with value \"%s\""
 msgstr ""
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, fuzzy, perl-format
+#| msgid "cannot parse %s field"
+msgid "cannot parse %s field value \"%s\""
+msgstr "kan veld %s niet ontleden"
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -3227,10 +3233,16 @@ msgstr "kan map %s niet openen"
 msgid "invalid filename %s"
 msgstr "ongeldige bestandsnaam %s"
 
+#: scripts/Dpkg/Email/Address.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture in list '%s'"
+msgid "invalid email address '%s'"
+msgstr "'%s' is geen geldige architectuur in lijst '%s'"
+
 #: scripts/Dpkg/Email/AddressList.pm
 #, fuzzy, perl-format
 #| msgid "'%s' is not a legal architecture in list '%s'"
-msgid "'%s' is not a valid email address list"
+msgid "invalid email address list '%s'"
 msgstr "'%s' is geen geldige architectuur in lijst '%s'"
 
 #: scripts/Dpkg/ErrorHandling.pm

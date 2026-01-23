@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dpkg-dev 1.15.4\n"
 "Report-Msgid-Bugs-To: debian-dpkg@lists.debian.org\n"
-"POT-Creation-Date: 2026-01-18 18:28+0100\n"
+"POT-Creation-Date: 2026-01-23 01:41+0100\n"
 "PO-Revision-Date: 2015-04-07 07:05+0200\n"
 "Last-Translator: Łukasz Dulny <BartekChom@poczta.onet.pl>\n"
 "Language-Team: Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -3278,6 +3278,12 @@ msgstr "informacje kontrolne"
 msgid "unexpected trailing comma in %s field with value \"%s\""
 msgstr ""
 
+#: scripts/Dpkg/Control/FieldsCore.pm
+#, fuzzy, perl-format
+#| msgid "cannot open %s"
+msgid "cannot parse %s field value \"%s\""
+msgstr "nie można otworzyć %s"
+
 #: scripts/Dpkg/Control/HashCore.pm
 #, perl-format
 msgid "syntax error in %s at line %d: %s"
@@ -3384,10 +3390,16 @@ msgstr "nie można utworzyć katalogu %s"
 msgid "invalid filename %s"
 msgstr "niepoprawna flaga w %s: %s"
 
+#: scripts/Dpkg/Email/Address.pm
+#, fuzzy, perl-format
+#| msgid "'%s' is not a legal architecture string"
+msgid "invalid email address '%s'"
+msgstr "\"%s\" nie jest poprawną specyfikacją architektury"
+
 #: scripts/Dpkg/Email/AddressList.pm
 #, fuzzy, perl-format
 #| msgid "'%s' is not a legal architecture string"
-msgid "'%s' is not a valid email address list"
+msgid "invalid email address list '%s'"
 msgstr "\"%s\" nie jest poprawną specyfikacją architektury"
 
 #: scripts/Dpkg/ErrorHandling.pm
